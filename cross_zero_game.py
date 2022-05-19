@@ -98,3 +98,4 @@ while not end_game(play_field, player):
     else:
         print(f'Поле c координатами: {cur_hod} занято.')
         cur_hod = None
+#Добавим комментариев для проверки как работает GIT
