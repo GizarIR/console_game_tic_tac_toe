@@ -70,7 +70,7 @@ def end_game(field_game, cur_p):
         print(f'Игра окончена. Ничья')
         return True
 
-    if any([x in [0, 3] for x in sum_count]) and cur_p == 'x':  # проверим список сумм на наличие выйгрышей
+    if (any([x in [0, 3] for x in sum_count]) and cur_p == 'x') or all([x <= 3 for x in sum_count]):  # проверим список сумм на наличие выйгрышей
         if len(list(filter(lambda x: x == 0, sum_count))) == len(list(filter(lambda y: y == 3, sum_count))):
             print(f'Игра окончена. Ничья')
         elif len(list(filter(lambda x: x == 0, sum_count))) > len(list(filter(lambda y: y == 3, sum_count))):
@@ -101,4 +101,4 @@ while not end_game(play_field, player):
     else:
         print(f'Поле c координатами: {cur_hod} занято.')
         cur_hod = None
-#Добавим комментариев для проверки как работает GIT
+
